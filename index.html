@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imagibot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonte Jua -->
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <style>
+    .font-jua {
+      font-family: 'Jua', sans-serif;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: -1;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="relative bg-gradient-to-br from-[#F9FAFB] via-[#F8FDF8] to-[#F4FAF2] text-gray-800">
+
+   <!-- Blobs decorativos -->
+  <div class="blob w-72 h-72 bg-[#0164B1]/20 top-10 left-10"></div>
+  <div class="blob w-96 h-96 bg-[#1FBEC8]/20 bottom-20 right-20"></div>
+  <div class="blob w-64 h-64 bg-[#A6CD38]/20 bottom-40 left-1/4"></div>
+
+  <!-- Navbar -->
+  <header class="fixed top-0 w-full z-50 bg-gray-50/60 backdrop-blur-md border-b border-gray-200">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="font-jua text-2xl bg-gradient-to-r from-[#0164B1] via-[#1FBEC8] to-[#A6CD38] bg-clip-text text-transparent">
+        imagibot
+      </h1>
+      <ul class="flex gap-6 text-sm font-medium text-gray-700">
+        <li><a href="#sobre" class="hover:text-[#1FBEC8] transition">Sobre</a></li>
+        <li><a href="#kits" class="hover:text-[#1FBEC8] transition">Kit</a></li>
+        <li><a href="#experiencia" class="hover:text-[#1FBEC8] transition">Experiência</a></li>
+        <li><a href="#adquirir" class="hover:text-[#1FBEC8] transition">Adquirir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <h2 class="font-jua text-8xl bg-gradient-to-r from-[#0164B1] via-[#1FBEC8] to-[#A6CD38] bg-clip-text text-transparent mb-6 leading-[1.1]">
+      imagibot
+    </h2>
+    <p class="text-2xl text-gray-700 max-w-xl">
+      uma jornada imersiva de introdução à robótica
+    </p>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="max-w-5xl mx-auto py-20 px-6 bg-gray-50/60 backdrop-blur rounded-3xl shadow-lg">
+    <h3 class="text-3xl font-bold mb-6 text-center">
+      Sobre o Projeto
+    </h3>
+    <p class="text-gray-700 leading-relaxed text-lg text-justify">
+      O <strong>Imagibot</strong> é um kit inovador de robótica educativa pensado para estimular
+      a imaginação, o aprendizado e a inclusão, especialmente para pessoas com deficiência visual.
+      Ele transforma o aprendizado em uma aventura sensorial, onde toque, som e lógica se unem para
+      criar experiências únicas.
+    </p>
+  </section>
+
+  <!-- Cards -->
+  <section id="kits" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-bold mb-12 text-center">O Kit Completo</h3>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div class="bg-gray-50/60 backdrop-blur border border-transparent rounded-2xl p-6 shadow-xl hover:shadow-2xl transition">
+          <h4 class="font-semibold mb-2">Kit completo (ESP32-S3)</h4>
+          <p class="text-gray-600">Placa ESP32-S3 e módulos prontos para atividades táteis e sonoras.</p>
+        </div>
+        <div class="bg-gray-50/60 backdrop-blur border border-transparent rounded-2xl p-6 shadow-xl hover:shadow-2xl transition">
+          <h4 class="font-semibold mb-2">Tapete tátil interativo</h4>
+          <p class="text-gray-600">Tabuleiro 10x10 com letras e números em braile para orientação espacial.</p>
+        </div>
+        <div class="bg-gray-50/60 backdrop-blur border border-transparent rounded-2xl p-6 shadow-xl hover:shadow-2xl transition">
+          <h4 class="font-semibold mb-2">Sensores & atuadores acessíveis</h4>
+          <p class="text-gray-600">Itens que oferecem feedback por som e vibração, facilitando o aprendizado.</p>
+        </div>
+        <div class="bg-gray-50/60 backdrop-blur border border-transparent rounded-2xl p-6 shadow-xl hover:shadow-2xl transition">
+          <h4 class="font-semibold mb-2">Curso e materiais</h4>
+          <p class="text-gray-600">Planos de aula e guias práticos para aplicação em sala.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiência -->
+  <section id="experiencia" class="max-w-5xl mx-auto py-20 px-6 bg-gray-50/60 backdrop-blur rounded-3xl shadow-lg">
+    <h3 class="text-3xl font-bold mb-6 text-center">A Experiência</h3>
+    <p class="text-gray-700 leading-relaxed text-lg text-justify">
+      O coração da aventura é o robô <strong>Imagibot</strong>, que guia o usuário por uma jornada repleta de desafios e conquistas.
+      Seu corpo modular pode ser equipado com sensores e acessórios ao longo do progresso. Cada missão
+      acontece no tapete 10x10 em braile, permitindo explorar o espaço de forma intuitiva e interativa —
+      tornando o aprendizado uma verdadeira aventura.
+    </p>
+  </section>
+
+  <!-- Adquirir -->
+  <section id="adquirir" class="py-20 px-6 text-center">
+    <h3 class="text-3xl font-bold mb-6">Adquira o Imagibot</h3>
+    <p class="text-gray-600 mb-8">Garanta seu kit e embarque nessa jornada educacional única.</p>
+    <a href="https://forms.gle/ev2PuaFR6ihSu7TaA" target="_blank" 
+       class="inline-block px-8 py-3 rounded-full border border-gray-400 text-gray-700 hover:border-transparent hover:bg-gradient-to-r hover:from-[#0164B1]/30 hover:via-[#1FBEC8]/30 hover:to-[#A6CD38]/30 transition">
+      Quero adquirir
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 text-center text-gray-600 border-t border-gray-200 bg-gray-50/60 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="mb-4 text-sm">© 2025 Imagibot. Todos os direitos reservados.</p>
+      <div class="flex justify-center space-x-6">
+         <a href="#" class="hover:text-[#0164B1] transition">Contato</a>
+         <a href="#" class="hover:text-[#0164B1] transition">Suporte</a>
+         <a href="https://instagram.com" target="_blank" class="hover:text-[#0164B1] transition">Instagram</a>
+         <a href="https://facebook.com" target="_blank" class="hover:text-[#0164B1] transition">Facebook</a>
+         <a href="https://linkedin.com" target="_blank" class="hover:text-[#0164B1] transition">LinkedIn</a>
+    </div>
+    </div>
+  </footer>
+
+</body>
+</html>
