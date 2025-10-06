@@ -20,16 +20,31 @@
     html {
       scroll-behavior: smooth;
     }
+
+    .gradient-text {
+    background: linear-gradient(270deg, #0164B1, #1FBEC8, #A6CD38, #0164B1);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 8s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
   </style>
 </head>
 <body class="relative bg-gradient-to-br from-[#DCE9E3] via-[#DCEFE6] to-[#D7E6DD] text-gray-800">
 
-   <!-- Blobs decorativos -->
+   <!-- blobs decorativos -->
   <div class="blob w-72 h-72 bg-[#0164B1]/25 top-10 left-10"></div>
   <div class="blob w-96 h-96 bg-[#1FBEC8]/25 bottom-20 right-20"></div>
   <div class="blob w-64 h-64 bg-[#A6CD38]/25 bottom-40 left-1/4"></div>
 
-  <!-- Navbar -->
+  <!-- barra -->
   <header class="fixed top-0 w-full z-50 bg-gray-50/60 backdrop-blur-md border-b border-gray-200">
     <nav class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
       <h1 class="font-jua text-2xl bg-gradient-to-r from-[#0164B1] via-[#1FBEC8] to-[#A6CD38] bg-clip-text text-transparent">
@@ -44,17 +59,17 @@
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- hero -->
   <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
-    <h2 class="font-jua text-8xl bg-gradient-to-r from-[#0164B1] via-[#1FBEC8] to-[#A6CD38] bg-clip-text text-transparent mb-6 leading-[1.1]">
+    <h2 class="font-jua text-8xl bg-gradient-to-r from-[#0164B1] via-[#1FBEC8] to-[#A6CD38] bg-clip-text text-transparent mb-3 leading-[1.1]">
       imagibot
     </h2>
-    <p class="text-2xl text-gray-700 max-w-xl">
+    <p class="text-2xl max-w-xl gradient-text -mt-1">
       uma jornada imersiva de introdução à robótica
     </p>
   </section>
 
-  <!-- Sobre -->
+  <!-- sobre -->
 <section id="sobre" class="max-w-5xl mx-auto py-20 px-6 bg-white/80 backdrop-blur rounded-3xl shadow-lg">
     <h3 class="text-3xl font-bold mb-6 text-center">
       Sobre o Projeto
@@ -67,7 +82,7 @@
     </p>
   </section>
 
-  <!-- Cards -->
+  <!-- cards -->
   <section id="kits" class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
       <h3 class="text-3xl font-bold mb-12 text-center">O Kit Completo</h3>
@@ -92,7 +107,7 @@
     </div>
   </section>
 
-  <!-- Experiência -->
+  <!-- experiencia -->
   <section id="experiencia" class="max-w-5xl mx-auto py-20 px-6 bg-gray-50/60 backdrop-blur rounded-3xl shadow-lg">
     <h3 class="text-3xl font-bold mb-6 text-center">A Experiência</h3>
     <p class="text-gray-700 leading-relaxed text-lg text-justify">
@@ -103,7 +118,7 @@
     </p>
   </section>
 
-  <!-- Adquirir -->
+  <!-- adquirir -->
   <section id="adquirir" class="py-20 px-6 text-center">
     <h3 class="text-3xl font-bold mb-6">Adquira o Imagibot</h3>
     <p class="text-gray-600 mb-8">Garanta seu kit e embarque nessa jornada educacional única!</p>
@@ -113,7 +128,7 @@
     </a>
   </section>
 
-  <!-- Footer -->
+  <!-- rodape -->
   <footer class="py-8 text-center text-gray-600 border-t border-gray-200 bg-gray-50/60 backdrop-blur">
     <div class="max-w-6xl mx-auto px-6">
       <p class="mb-4 text-sm">© 2025 Imagibot. Todos os direitos reservados.</p>
