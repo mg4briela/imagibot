@@ -110,107 +110,171 @@
     </div>
   </section>
 
-<!-- galeria -->
-<section id="galeria" class="max-w-5xl mx-auto py-20 px-6 mt-8 mb-20 bg-gray-50/70 backdrop-blur rounded-3xl shadow-lg">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-6 text-center">Galeria</h2>
+  <!-- galeria -->
+  <section id="galeria" class="max-w-5xl mx-auto py-20 px-6 mb-20 bg-gray-50/70 backdrop-blur rounded-3xl shadow-lg">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6 text-center">Galeria</h2>
 
-    <!-- Container do carrossel -->
-    <div class="relative mx-auto overflow-hidden rounded-2xl" style="max-height: 300px;">
-      <div id="carousel" class="flex transition-transform duration-700 ease-in-out gap-4">
-        <img src="img/foto1.webp" class="flex-shrink-0 w-64 h-48 object-contain cursor-pointer" alt="Imagem 1">
-        <img src="img/foto2.webp" class="flex-shrink-0 w-64 h-48 object-contain cursor-pointer" alt="Imagem 2">
-        <img src="img/foto3.webp" class="flex-shrink-0 w-64 h-48 object-contain cursor-pointer" alt="Imagem 3">
-        <img src="img/foto4.webp" class="flex-shrink-0 w-64 h-48 object-contain cursor-pointer" alt="Imagem 4">
-        <img src="img/foto5.webp" class="flex-shrink-0 w-64 h-48 object-contain cursor-pointer" alt="Imagem 5">
+      <!-- container do carrossel -->
+      <div class="relative mx-auto overflow-hidden rounded-2xl" style="max-height: 300px;">
+        <div id="carousel" class="flex transition-transform duration-700 ease-in-out gap-4">
+        
+          <figure class="flex-shrink-0 w-64 h-48 cursor-pointer">
+            <img src="img/foto1.webp" class="w-full h-full object-contain rounded-md" alt="Robô educacional sobre uma mesa de testes">
+            <figcaption class="sr-only">legenda</figcaption>
+          </figure>
+
+          <figure class="flex-shrink-0 w-64 h-48 cursor-pointer">
+            <img src="img/foto2.webp" class="w-full h-full object-contain rounded-md" alt="Sensores de proximidade do robô em destaque">
+            <figcaption class="sr-only">legenda</figcaption>
+          </figure>
+
+          <figure class="flex-shrink-0 w-64 h-48 cursor-pointer">
+            <img src="img/foto3.webp" class="w-full h-full object-contain rounded-md" alt="Equipe montando o protótipo do robô">
+            <figcaption class="sr-only">legenda</figcaption>
+          </figure>
+
+          <figure class="flex-shrink-0 w-64 h-48 cursor-pointer">
+            <img src="img/foto4.webp" class="w-full h-full object-contain rounded-md" alt="Placa de controle eletrônica do robô">
+            <figcaption class="sr-only">legenda</figcaption>
+          </figure>
+
+          <figure class="flex-shrink-0 w-64 h-48 cursor-pointer">
+            <img src="img/foto5.webp" class="w-full h-full object-contain rounded-md" alt="Robô finalizado exposto em evento escolar">
+            <figcaption class="sr-only">legenda</figcaption>
+          </figure>
+
+        </div>
+
+        <!-- botões -->
+          <button id="prev" class="absolute top-1/2 left-3 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-4 rounded-full shadow-lg transition-transform duration-200 hover:scale-110">‹</button>
+          <button id="next" class="absolute top-1/2 right-3 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-4 rounded-full shadow-lg transition-transform duration-200 hover:scale-110">›</button>
       </div>
-
-      <!-- Botões do carrossel -->
-      <button id="prev" class="absolute top-1/2 left-3 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-4 rounded-full shadow-lg transition-transform duration-200 hover:scale-110">‹</button>
-      <button id="next" class="absolute top-1/2 right-3 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-4 rounded-full shadow-lg transition-transform duration-200 hover:scale-110">›</button>
     </div>
+  </section>
+
+  <!-- lightbox -->
+  <div id="lightbox" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50" aria-hidden="true" role="dialog" aria-modal="true">
+    <button id="closeLightbox" class="absolute top-5 right-5 text-white text-3xl font-bold" aria-label="Fechar">×</button>
+    <button id="prevLightbox" class="absolute left-5 text-white text-4xl font-bold" aria-label="Imagem anterior">‹</button>
+    <img id="lightboxImg" src="" alt="" class="max-h-[80%] max-w-[80%] object-contain rounded-lg shadow-xl">
+    <button id="nextLightbox" class="absolute right-5 text-white text-4xl font-bold" aria-label="Próxima imagem">›</button>
   </div>
-</section>
 
-<!-- Lightbox -->
-<div id="lightbox" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
-  <button id="closeLightbox" class="absolute top-5 right-5 text-white text-3xl font-bold">×</button>
-  <button id="prevLightbox" class="absolute left-5 text-white text-4xl font-bold">‹</button>
-  <img id="lightboxImg" src="" class="max-h-[80%] max-w-[80%] object-contain rounded-lg shadow-xl">
-  <button id="nextLightbox" class="absolute right-5 text-white text-4xl font-bold">›</button>
-</div>
+  <script>
+  /* carrossel*/
+  const carousel = document.getElementById('carousel');
+  const next = document.getElementById('next');
+   prev = document.getElementById('prev');
+  const slideFigures = carousel.querySelectorAll('figure'); // <figure> elements
+  let index = 0;
 
-<script>
-const carousel = document.getElementById('carousel');
-const next = document.getElementById('next');
-const prev = document.getElementById('prev');
-const slides = carousel.children;
-let index = 0;
-
-const slideWidth = slides[0].offsetWidth + 16; // largura + gap
-
-function updateCarousel() {
-  carousel.style.transform = `translateX(-${index * slideWidth}px)`;
-}
-
-next.addEventListener('click', () => {
-  if(index < slides.length - 1){
-    index++;
-    updateCarousel();
+  function getSlideWidth() {
+    if (!slideFigures[0]) return 0;
+    const slideRect = slideFigures[0].getBoundingClientRect();
+    // pega o gap do container (CSS gap)
+    const gapStr = getComputedStyle(carousel).gap || getComputedStyle(carousel).columnGap || "0px";
+    const gap = parseFloat(gapStr) || 0;
+    return Math.round(slideRect.width + gap);
   }
-});
 
-prev.addEventListener('click', () => {
-  if(index > 0){
-    index--;
-    updateCarousel();
+  let slideWidth = getSlideWidth();
+  function updateCarousel() {
+    carousel.style.transform = `translateX(-${index * slideWidth}px)`;
   }
-});
 
-// ---------------- Lightbox ----------------
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-const closeLightbox = document.getElementById('closeLightbox');
-const nextLightbox = document.getElementById('nextLightbox');
-const prevLightbox = document.getElementById('prevLightbox');
+  next.addEventListener('click', () => {
+    if (index < slideFigures.length - 1) {
+      index++;
+      updateCarousel();
+    }
+  });
+  prev.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+      updateCarousel();
+    }
+  });
 
-let lbIndex = 0;
+  // recalcula em resize
+  window.addEventListener('resize', () => {
+    slideWidth = getSlideWidth();
+    updateCarousel();
+  });
 
-// abrir lightbox ao clicar na imagem
-Array.from(slides).forEach((img, i) => {
-  img.addEventListener('click', () => {
+  /* lightbox */
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeLightbox = document.getElementById('closeLightbox');
+  const nextLightbox = document.getElementById('nextLightbox');
+  const prevLightbox = document.getElementById('prevLightbox');
+
+  let lbIndex = 0;
+
+  function openLightbox(i) {
     lbIndex = i;
-    lightboxImg.src = img.src;
+    const imgEl = slideFigures[lbIndex].querySelector('img');
+    if (!imgEl) return;
+    lightboxImg.src = imgEl.src;
+    lightboxImg.alt = imgEl.alt || '';
     lightbox.classList.remove('hidden');
     lightbox.classList.add('flex');
-  });
-});
+    lightbox.setAttribute('aria-hidden', 'false');
+    // opcional
+    closeLightbox.focus();
+  }
 
-// fechar
-closeLightbox.addEventListener('click', () => {
-  lightbox.classList.add('hidden');
-  lightbox.classList.remove('flex');
-});
-
-// navegação lightbox
-nextLightbox.addEventListener('click', () => {
-  lbIndex = (lbIndex + 1) % slides.length;
-  lightboxImg.src = slides[lbIndex].src;
-});
-
-prevLightbox.addEventListener('click', () => {
-  lbIndex = (lbIndex - 1 + slides.length) % slides.length;
-  lightboxImg.src = slides[lbIndex].src;
-});
-
-// fechar clicando fora da imagem
-lightbox.addEventListener('click', (e) => {
-  if(e.target === lightbox) {
+  function closeLB() {
     lightbox.classList.add('hidden');
     lightbox.classList.remove('flex');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImg.src = '';
   }
-});
-</script>
+
+  // abre ao clicar na figura (ou na img)
+  slideFigures.forEach((fig, i) => {
+    fig.addEventListener('click', (e) => {
+      // evita abrir quando clicar em botões do próprio lightbox por engano
+      if (e.target.tagName.toLowerCase() === 'button') return;
+      openLightbox(i);
+    });
+  });
+
+  // botões do lightbox
+  nextLightbox.addEventListener('click', (e) => {
+  e.stopPropagation();
+  lbIndex = (lbIndex + 1) % slideFigures.length;
+  const imgEl = slideFigures[lbIndex].querySelector('img');
+  lightboxImg.src = imgEl.src;
+  lightboxImg.alt = imgEl.alt || '';
+  });
+
+  prevLightbox.addEventListener('click', (e) => {
+    e.stopPropagation();
+    lbIndex = (lbIndex - 1 + slideFigures.length) % slideFigures.length;
+    const imgEl = slideFigures[lbIndex].querySelector('img');
+    lightboxImg.src = imgEl.src;
+    lightboxImg.alt = imgEl.alt || '';
+  });
+
+  closeLightbox.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeLB();
+  });
+
+  // fechar clicando fora da imagem
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLB();
+  });
+
+  // fechar com Escape, navegar com setas
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLB();
+    if (e.key === 'ArrowRight') nextLightbox.click();
+    if (e.key === 'ArrowLeft') prevLightbox.click();
+  });
+  </script>
 
   <!-- experiencia -->
   <section id="experiencia" class="max-w-5xl mx-auto py-20 px-6 bg-gray-50/70 backdrop-blur rounded-3xl shadow-lg">
@@ -238,10 +302,13 @@ lightbox.addEventListener('click', (e) => {
     <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
 
       <!-- Logo LDS -->
-      <div class="flex flex-col items-center leading-tight mb-2">
-        <p class="text-gray-700 font-semibold mb-1">Um projeto LDS</p>
-        <img src="img/logo-lds.webp" alt="Logo LDS" class="h-12 opacity-80">
-      </div>
+        <figure class="flex flex-col items-center leading-tight mb-2">
+          <p class="text-gray-700 font-semibold mb-1">Um projeto LDS</p>
+          <img src="img/logo-lds.webp" alt="Logotipo do projeto LDS" class="h-12 opacity-80">
+          <figcaption class="sr-only">
+            Logotipo do projeto Laboratório de Desenvolvimento de Sistemas (LDS)
+          </figcaption>
+          </figure>
 
       <!-- Direitos reservados -->
       <p class="text-sm mb-3">© 2025 Imagibot. Todos os direitos reservados.</p>
